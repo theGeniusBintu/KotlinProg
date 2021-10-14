@@ -1,12 +1,17 @@
 class FoodEnvironment(vararg  ags : Actor ) : Environment(*ags) {
     override fun processAction(agent: Actor, act: Action) {
-      if (act is ForageAction){
-          score.put(agent,score.getValue(agent)+1)
+     // if (act is ForageAction){
+        //  score.put(agent,score.getValue(agent)+1)
+        when(act){
+            is ForageAction -> score.put(agent,score.getValue(agent)+1)
+        }
       }
-    }
+
 
     override fun sense(agent: Actor) {
+        TODO("Not yet implemented")
     }
+
 
     val score : MutableMap<Actor, Int> = mutableMapOf()
     init {
@@ -28,4 +33,4 @@ If the agent has performed a ForageAction, increase their score by one. (Hint: l
 
 }
 
-typealias processAction = (Actor, Action) -> Action
+//typealias processAction = (Actor, Action) -> Action
