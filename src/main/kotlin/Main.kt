@@ -9,7 +9,19 @@
 
 }*/
 fun main() {
-    val env = FoodEnvironment(SimpleAgent("Charlie"))
+  /*  val env = FoodEnvironment(SimpleAgent("Charlie"))
     env.step()
-    println(env.score)
+    println(env.score)*/
+
+
+        val env = FoodEnvironment(RandomAgent("Charlie",0.8), RandomAgent("Bob", 0.2), RandomAgent("Alice", 0.6))
+        for (i in 1..100)
+            env.step()
+        println(env.score)
+
+/*    val env = FoodEnvironment(CleverAgent("Charlie"), RandomAgent("Bob", 0.2), SimpleAgent("Alice"))
+    for (i in 1..100) {
+        env.step()
+    }
+    println(env.score)*/
 }

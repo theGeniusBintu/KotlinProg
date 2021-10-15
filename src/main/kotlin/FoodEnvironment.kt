@@ -1,15 +1,34 @@
+import kotlin.random.Random as RNG
+
 class FoodEnvironment(vararg  ags : Actor ) : Environment(*ags) {
+
+    override fun step() {
+        super.step()
+    }
     override fun processAction(agent: Actor, act: Action) {
      // if (act is ForageAction){
         //  score.put(agent,score.getValue(agent)+1)
         when(act){
             is ForageAction -> score.put(agent,score.getValue(agent)+1)
         }
+
+
+
       }
 
 
     override fun sense(agent: Actor) {
-        TODO("Not yet implemented")
+        var animal : String?
+
+        val probOfHunt  : Double = RNG.nextDouble(0.1, 1.0)
+        if (probOfHunt in 0.0..0.5){
+         animal = null
+        }else{
+            animal = "Elephant"
+        }
+
+
+
     }
 
 
