@@ -19,6 +19,8 @@ fun main() {
             env.step()
         println(env.score)
 
+    println("May the force guide you")
+
 /*    val env = FoodEnvironment(CleverAgent("Charlie"), RandomAgent("Bob", 0.2), SimpleAgent("Alice"))
     for (i in 1..100) {
         env.step()
